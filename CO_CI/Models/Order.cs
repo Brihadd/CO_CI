@@ -20,11 +20,11 @@ namespace CO_CI.Models
     }
     public enum OrderState
     {
-        New, 
+        New,
+        Canceled,
         ManagerApproved,
         ContractorApproved,
         Active,
-        Canceled,
         Expired
     }
 }

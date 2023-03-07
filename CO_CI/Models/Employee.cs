@@ -2,7 +2,7 @@
 
 namespace CO_CI.Models
 {
-    public class Employee:Base
+    public abstract class Employee:Base
     {
         public int Id { get; set; }
 
@@ -13,7 +13,6 @@ namespace CO_CI.Models
         public string PhoneNumber { get; set; }
 
         public UserStatus UserStatus { get; set; }
-
         public string Email { get; set; }
 
         public DateTime BirthDate { get; set; }
@@ -25,6 +24,7 @@ namespace CO_CI.Models
     {
         Accountant,
         BackOffice,
+        Contractor,
         Manager
     }
 }

@@ -6,7 +6,7 @@ namespace CO_CI.Models
 {
     public class Invoice
     {
-        public int Id { get; set; } 
+        public int InvoiceId { get; set; } 
         public string ContractorName { get; set; }
         public string ContractorEmail { get; set;}
         public string ContractorPhoneNumber { get; set;}
@@ -21,8 +21,8 @@ namespace CO_CI.Models
 
         public decimal HourRate { get; set; }
         public List<Expense> Expenses { get; set; } = new List<Expense>();
-        
-
+        public decimal Amount { get; set; }
+        public decimal VATAmount { get; set; }
     }
     public enum Сurrency
     {
