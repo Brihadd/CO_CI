@@ -2,7 +2,7 @@
 
 namespace CO_CI.Models
 {
-    public class Order
+    public class Order:Base
     {
         public int Id { get; set; }
         public string OrderCode { get; set; }

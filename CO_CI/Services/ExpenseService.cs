@@ -1,6 +1,6 @@
 ﻿namespace CO_CI.Services
 {
-    public class ExpenseService
+    public class ExpenseService:IExpenseService
     {
     }
 }

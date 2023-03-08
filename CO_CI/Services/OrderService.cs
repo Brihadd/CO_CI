@@ -1,6 +1,6 @@
 ﻿namespace CO_CI.Services
 {
-    public class OrderService
+    public class OrderService : IOrderService
     {
     }
 }

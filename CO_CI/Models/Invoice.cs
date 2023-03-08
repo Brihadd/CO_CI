@@ -4,7 +4,7 @@ using System.Security.Principal;
 
 namespace CO_CI.Models
 {
-    public class Invoice
+    public class Invoice:Base
     {
         public int InvoiceId { get; set; } 
         public string ContractorName { get; set; }
@@ -20,14 +20,61 @@ namespace CO_CI.Models
         public double HoursCount { get; set; }
 
         public decimal HourRate { get; set; }
+        public double TaxRate { get; set; }
         public List<Expense> Expenses { get; set; } = new List<Expense>();
-        public decimal Amount { get; set; }
-        public decimal VATAmount { get; set; }
+        public decimal ExpensesAmout
+        {
+            get
+            {
+                return ExpensesAmout;
+            }
+            set
+            {
+                for (int i = 0; i < Expenses.Count; i++)
+                {
+                    value += Expenses[i].Amount;
+                }
+                ExpensesAmout = value;
+            }
+        }
+        public decimal Amount
+        {
+            get
+            {
+                return Amount;
+            }
+            set
+            {
+                Amount = (decimal)HoursCount * HourRate + ExpensesAmout;
+            }
+        }
+
+        public decimal VATAmount
+        {
+            get
+            {
+                return VATAmount;
+            }
+            set
+            {
+                VATAmount = Amount+ Amount/100*(decimal)TaxRate;
+            }
+        }
+
     }
     public enum Сurrency
     {
         USD,
         RUB,
         EUR
+    }
+    public enum InvoiceState
+    {
+        New,
+        Canceled,
+        ManagerApproved,
+        ManagerRejected,
+        AccountantApproved,
+        AccountantRejected
     }
 }

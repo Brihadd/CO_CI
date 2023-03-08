@@ -1,6 +1,6 @@
 ﻿namespace CO_CI.Models
 {
-    public class Expense
+    public class Expense:Base
     {
         public int Id { get; set; }
         public int InvoiceId { get; set; }
