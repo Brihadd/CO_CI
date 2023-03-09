@@ -66,6 +66,7 @@ namespace CO_CI.Services
                 invoiceToUpdate.InvoiceState = invoice.InvoiceState;
                 invoiceToUpdate.HoursCount = invoice.HoursCount;
                 invoiceToUpdate.HourRate = invoice.HourRate;
+                invoiceToUpdate.TaxRate = invoice.TaxRate;
                 invoiceToUpdate.Expenses = invoice.Expenses;
 
 

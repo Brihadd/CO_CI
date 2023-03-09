@@ -19,7 +19,6 @@ namespace CO_CI.Models
         public Сurrency Сurrency { get; set; }
         public InvoiceState InvoiceState { get; set; }
         public double HoursCount { get; set; }
-
         public decimal HourRate { get; set; }
         public double TaxRate { get; set; }
         public List<Expense> Expenses { get; set; } = new List<Expense>();
