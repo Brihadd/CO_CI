@@ -15,7 +15,6 @@ namespace CO_CI.Models
         public double HourRate { get; set; }
         public double MDRate { get; set; }
         public OrderState OrderState { get; set; }
-       
         public string Info { get; set; }
     }
     public enum OrderState

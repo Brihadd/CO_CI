@@ -17,6 +17,7 @@ namespace CO_CI.Models
         public string Period { get; set; }
         public DateTime PaymentDeadline { get; set; }
         public Сurrency Сurrency { get; set; }
+        public InvoiceState InvoiceState { get; set; }
         public double HoursCount { get; set; }
 
         public decimal HourRate { get; set; }
