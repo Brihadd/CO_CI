@@ -64,7 +64,7 @@ namespace CO_CI.Services
                 orderToUpdate.MDRate= order.MDRate;
                 orderToUpdate.OrderState = order.OrderState;
                 orderToUpdate.Info = order.Info;
-                orderToUpdate.TaxRate
+                
 
                 await _context.SaveChangesAsync();
 

@@ -2,7 +2,7 @@
 
 namespace CO_CI.Models
 {
-    public abstract class Employee:Base
+    public  class Employee:Base
     {
         public int Id { get; set; }
 

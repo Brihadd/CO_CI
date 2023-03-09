@@ -15,6 +15,9 @@ namespace CO_CI.Services
         {
             invoice.Created = DateTime.Now;
             invoice.Updated = DateTime.Now;
+            invoice.ExpensesAmount = invoice.ExpensesAmountCount();
+            invoice.Amount= invoice.AmountCount(); 
+            invoice.VATAmount=invoice.VATAmountCount();
             await _context.Invoices.AddAsync(invoice);
             await _context.SaveChangesAsync();
 
@@ -68,6 +71,10 @@ namespace CO_CI.Services
                 invoiceToUpdate.HourRate = invoice.HourRate;
                 invoiceToUpdate.TaxRate = invoice.TaxRate;
                 invoiceToUpdate.Expenses = invoice.Expenses;
+                invoiceToUpdate.ExpensesAmount = invoice.ExpensesAmountCount();
+                invoiceToUpdate.Amount = invoice.AmountCount();
+                invoiceToUpdate.VATAmount = invoice.VATAmountCount();
+
 
 
                 await _context.SaveChangesAsync();

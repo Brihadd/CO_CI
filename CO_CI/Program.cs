@@ -28,7 +28,6 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
-builder.Services.AddScoped<IExpenseService, ExpenseService>();
 builder.Services.AddScoped<IInvoiceService, InvoiceService>();
 
 var app = builder.Build();

@@ -22,43 +22,29 @@ namespace CO_CI.Models
         public decimal HourRate { get; set; }
         public double TaxRate { get; set; }
         public List<Expense> Expenses { get; set; } = new List<Expense>();
-        public decimal ExpensesAmout
+        public decimal ExpensesAmount { get; set; }
+        public decimal Amount { get; set; }
+        public decimal VATAmount { get; set; }
+        public decimal  ExpensesAmountCount()
         {
-            get
-            {
-                return ExpensesAmout;
-            }
-            set
-            {
-                for (int i = 0; i < Expenses.Count; i++)
+            decimal result = 0;
+            for (int i = 0; i < Expenses.Count; i++)
                 {
-                    value += Expenses[i].Amount;
+                result += Expenses[i].Amount;
                 }
-                ExpensesAmout = value;
-            }
+            return result;
         }
-        public decimal Amount
+        public decimal  AmountCount()
         {
-            get
-            {
-                return Amount;
-            }
-            set
-            {
-                Amount = (decimal)HoursCount * HourRate + ExpensesAmout;
-            }
-        }
+            
+            return (decimal)HoursCount * HourRate + ExpensesAmountCount();
 
-        public decimal VATAmount
+        }
+        public decimal VATAmountCount()
         {
-            get
-            {
-                return VATAmount;
-            }
-            set
-            {
-                VATAmount = Amount+ Amount/100*(decimal)TaxRate;
-            }
+            
+            return AmountCount() + AmountCount()/ 100 * (decimal)TaxRate;
+
         }
 
     }
