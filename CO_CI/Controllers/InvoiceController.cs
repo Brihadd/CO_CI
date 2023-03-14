@@ -20,7 +20,7 @@ namespace CO_CI.Controllers
         {
             try
             {
-                return await _invoiceService.GetAllInvoice();
+                return await _invoiceService.GetAllInvoices();
             }
             catch (Exception ex)
             {
