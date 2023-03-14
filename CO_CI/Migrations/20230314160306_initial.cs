@@ -125,6 +125,29 @@ namespace CO_CI.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Departments",
+                columns: new[] { "Id", "Created", "ManagerId", "Name", "Updated" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5054), 1, "FirstDepartment", new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5065) },
+                    { 2, new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5068), 2, "SecondDepartment", new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5069) },
+                    { 3, new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5070), 3, "ThirdDepartment", new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5070) }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Employees",
+                columns: new[] { "Id", "BirthDate", "Created", "Deleted", "Email", "Name", "PhoneNumber", "Surname", "Updated", "UserStatus" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1990, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5127), false, "firstmanager@gmail.com", "Ivan", "+7 (900) 100-00-01", "Ivanov", new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5128), 3 },
+                    { 2, new DateTime(1990, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5130), false, "secondmanager@gmail.com", "Maxim", "+7 (900) 100-00-02", "Maximov", new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5130), 3 },
+                    { 3, new DateTime(1990, 8, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5132), false, "thirdmanager@gmail.com", "Gleb", "+7 (900) 100-00-03", "Glebov", new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5132), 3 },
+                    { 4, new DateTime(1990, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5134), false, "accountant@gmail.com", "Grigoriy", "+7 (900) 100-00-05", "Grigorov", new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5134), 0 },
+                    { 5, new DateTime(1990, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5136), false, "backofficet@gmail.com", "Vasiliy", "+7 (900) 100-00-06", "Vasiliev", new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5136), 1 },
+                    { 6, new DateTime(1990, 8, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5137), false, "contractor@gmail.com", "Mihail", "+7 (900) 100-00-07", "Mihailov", new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5138), 2 }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Expenses_InvoiceId",
                 table: "Expenses",

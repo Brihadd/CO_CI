@@ -17,7 +17,7 @@ namespace CO_CI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.14")
+                .HasAnnotation("ProductVersion", "6.0.15")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -46,6 +46,32 @@ namespace CO_CI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Departments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Created = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5054),
+                            ManagerId = 1,
+                            Name = "FirstDepartment",
+                            Updated = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5065)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Created = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5068),
+                            ManagerId = 2,
+                            Name = "SecondDepartment",
+                            Updated = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5069)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Created = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5070),
+                            ManagerId = 3,
+                            Name = "ThirdDepartment",
+                            Updated = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5070)
+                        });
                 });
 
             modelBuilder.Entity("CO_CI.Models.Employee", b =>
@@ -90,6 +116,86 @@ namespace CO_CI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BirthDate = new DateTime(1990, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5127),
+                            Deleted = false,
+                            Email = "firstmanager@gmail.com",
+                            Name = "Ivan",
+                            PhoneNumber = "+7 (900) 100-00-01",
+                            Surname = "Ivanov",
+                            Updated = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5128),
+                            UserStatus = 3
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BirthDate = new DateTime(1990, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5130),
+                            Deleted = false,
+                            Email = "secondmanager@gmail.com",
+                            Name = "Maxim",
+                            PhoneNumber = "+7 (900) 100-00-02",
+                            Surname = "Maximov",
+                            Updated = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5130),
+                            UserStatus = 3
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BirthDate = new DateTime(1990, 8, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5132),
+                            Deleted = false,
+                            Email = "thirdmanager@gmail.com",
+                            Name = "Gleb",
+                            PhoneNumber = "+7 (900) 100-00-03",
+                            Surname = "Glebov",
+                            Updated = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5132),
+                            UserStatus = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BirthDate = new DateTime(1990, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5134),
+                            Deleted = false,
+                            Email = "accountant@gmail.com",
+                            Name = "Grigoriy",
+                            PhoneNumber = "+7 (900) 100-00-05",
+                            Surname = "Grigorov",
+                            Updated = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5134),
+                            UserStatus = 0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            BirthDate = new DateTime(1990, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5136),
+                            Deleted = false,
+                            Email = "backofficet@gmail.com",
+                            Name = "Vasiliy",
+                            PhoneNumber = "+7 (900) 100-00-06",
+                            Surname = "Vasiliev",
+                            Updated = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5136),
+                            UserStatus = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            BirthDate = new DateTime(1990, 8, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5137),
+                            Deleted = false,
+                            Email = "contractor@gmail.com",
+                            Name = "Mihail",
+                            PhoneNumber = "+7 (900) 100-00-07",
+                            Surname = "Mihailov",
+                            Updated = new DateTime(2023, 3, 14, 19, 3, 6, 405, DateTimeKind.Local).AddTicks(5138),
+                            UserStatus = 2
+                        });
                 });
 
             modelBuilder.Entity("CO_CI.Models.Expense", b =>
