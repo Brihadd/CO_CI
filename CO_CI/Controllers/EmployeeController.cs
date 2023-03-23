@@ -42,6 +42,20 @@ namespace CO_CI.Controllers
                 return new Employee { };
             }
         }
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<Employee> GetEmployeeByEmail(string email)
+        {
+            try
+            {
+                return await _employeeService.GetEmployeeByEmail(email);
+            }
+            catch (Exception ex)
+            {
+                // TODO: Log exception
+                return new Employee { };
+            }
+        }
         [HttpPost]
         [Route("[action]")]
         public async Task<IActionResult> CreateEmployee([FromBody] Employee employee)

@@ -41,6 +41,11 @@ namespace CO_CI.Services
             return await _context.Employees.ToArrayAsync();
         }
 
+        public async Task<Employee> GetEmployeeByEmail(string employeeEmail)
+        {
+            return await _context.Employees.Where(x => x.Email == employeeEmail).FirstAsync();
+        }
+
         public async Task<Employee> GetEmployeeById(int employeeId)
         {
             return await _context.Employees.Where(x => x.Id == employeeId).FirstAsync();

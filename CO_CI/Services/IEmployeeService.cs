@@ -6,6 +6,7 @@ namespace CO_CI.Services
     {
         Task<Employee[]> GetAllEmployees();
         Task<Employee> GetEmployeeById(int employeeId);
+        Task<Employee> GetEmployeeByEmail(string employeeEmail);
         Task<Employee> CreateEmployee(Employee employee);
         Task<Employee> UpdateEmployee(Employee employee);
         Task<bool> DeleteEmployee(int employeeId);
