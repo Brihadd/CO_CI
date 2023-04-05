@@ -1,5 +1,6 @@
 ﻿using CO_CI.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 
 namespace CO_CI.Services
 {
@@ -38,14 +39,16 @@ namespace CO_CI.Services
                 return false;
         }
 
-        public async Task<Invoice[]> GetAllInvoices()
+        public async Task<Invoice[]> GetInvoicesByParameters(InvoiceParametr invoiceParametr)
         {
-            return await _context.Invoices.ToArrayAsync();
-        }
-
-        public async Task<Invoice> GetInvoiceById(int invoiceId)
-        {
-            return await _context.Invoices.Where(x => x.InvoiceId == invoiceId).FirstAsync();
+            var sql = new StringBuilder("SELECT * FROM Invoices");
+            if (invoiceParametr.Id != null) sql.Append($" WHERE Id = {invoiceParametr.Id}");
+            if (invoiceParametr.ContractorId != null) sql.Append($" WHERE ContractorId = {invoiceParametr.ContractorId}");
+            if (invoiceParametr.InvoiceState != InvoiceState.Default) sql.Append($" WHERE InvoiceState = {invoiceParametr.InvoiceState}");
+            if (invoiceParametr.SearchPaymentDeadlineFromDate != null && invoiceParametr.SearchPaymentDeadlineUpToDate != null)
+                sql.Append($" WHERE PaymentDeadline BETWEEN {invoiceParametr.SearchPaymentDeadlineFromDate}" +
+                    $" AND {invoiceParametr.SearchPaymentDeadlineUpToDate}");
+            return await _context.Invoices.FromSqlRaw(sql.ToString()).ToArrayAsync();
         }
 
         public async Task<Invoice> UpdateInvoice(Invoice invoice)

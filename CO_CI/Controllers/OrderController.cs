@@ -17,11 +17,11 @@ namespace CO_CI.Controllers
         }
         [HttpGet]
         [Route("[action]")]
-        public async Task<Order[]> GetAllOrders()
+        public async Task<Order[]> GetOrdersByParameters(OrderParametr orderParametr)
         {
             try
             {
-                return await _orderService.GetAllOrders();
+                return await _orderService.GetOrdersByParameters(orderParametr);
             }
             catch (Exception ex)
             {
@@ -29,20 +29,7 @@ namespace CO_CI.Controllers
                 return new Order[] { };
             }
         }
-        [HttpGet]
-        [Route("[action]")]
-        public async Task<Order> GetOrderById(int id)
-        {
-            try
-            {
-                return await _orderService.GetOrderById(id);
-            }
-            catch (Exception ex)
-            {
-                // TODO: Log exception
-                return new Order { };
-            }
-        }
+   
         [HttpPost]
         [Route("[action]")]
         public async Task<IActionResult> CreateOrder([FromBody] Order order)

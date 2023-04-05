@@ -7,6 +7,7 @@ namespace CO_CI.Models
     public class Invoice:Base
     {
         public int InvoiceId { get; set; } 
+        public int ContractorId { get; set; }
         public string ContractorName { get; set; }
         public string ContractorEmail { get; set;}
         public string ContractorPhoneNumber { get; set;}
@@ -61,6 +62,7 @@ namespace CO_CI.Models
         ManagerApproved,
         ManagerRejected,
         AccountantApproved,
-        AccountantRejected
+        AccountantRejected,
+        Default
     }
 }

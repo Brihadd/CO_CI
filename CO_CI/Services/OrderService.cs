@@ -1,5 +1,6 @@
 ﻿using CO_CI.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 
 namespace CO_CI.Services
 {
@@ -35,15 +36,26 @@ namespace CO_CI.Services
                 return false;
         }
 
-        public async Task<Order[]> GetAllOrders()
+        public async Task<Order[]> GetOrdersByParameters(OrderParametr orderParametr)
         {
-            return await _context.Orders.ToArrayAsync();
+            var sql = new StringBuilder("SELECT * FROM Orders");
+            if (orderParametr.Id != null) sql.Append($" WHERE Id = {orderParametr.Id}");
+            if (orderParametr.DepartmentId != null) sql.Append($" WHERE DepartmentId = {orderParametr.DepartmentId}");
+            if (orderParametr.ContractorId != null) sql.Append($" WHERE ContractorId = {orderParametr.ContractorId}");
+            if (orderParametr.OrderState != OrderState.Default) sql.Append($" WHERE OrderState = {orderParametr.OrderState}");
+            if (orderParametr.SearchFromDate != null && orderParametr.SearchUpToDate != null)
+                sql.Append($" WHERE StartDate > {orderParametr.SearchUpToDate} AND EndDate < {orderParametr.SearchUpToDate}");
+            return await _context.Orders.FromSqlRaw(sql.ToString()).ToArrayAsync();
         }
+        public int Id { get; set; }
+        public int DepartmentId { get; set; }
+        public int ContractorId { get; set; }
+        public OrderState OrderState { get; set; }
 
-        public async Task<Order> GetOrderById(int orderId)
-        {
-            return await _context.Orders.Where(x => x.Id == orderId).FirstAsync();
-        }
+        public DateTime SearchFromDate { get; set; }
+
+        public DateTime SearchUpToD { get; set; }
+
 
         public async Task<Order> UpdateOrder(Order order)
         {

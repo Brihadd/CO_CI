@@ -24,6 +24,7 @@ namespace CO_CI.Models
         ManagerApproved,
         ContractorApproved,
         Active,
-        Expired
+        Expired,
+        Default
     }
 }
