@@ -67,7 +67,7 @@ namespace CO_CI.Controllers
             catch (Exception ex)
             {
                 // TODO: Log exception
-                return null;
+                return StatusCode(500);
             }
         }
         [HttpPut]

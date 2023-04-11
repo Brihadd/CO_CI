@@ -17,7 +17,6 @@ namespace CO_CI.Models
 
         public DateTime BirthDate { get; set; }
 
-        public bool Deleted { get; set; }
 
     }
     public enum UserStatus

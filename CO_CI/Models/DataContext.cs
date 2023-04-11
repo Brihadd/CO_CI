@@ -17,22 +17,22 @@ namespace CO_CI.Models
 
             modelBuilder.Entity<Employee>().HasData(
                 new { Id = 1, Name = "Ivan", Surname = "Ivanov", PhoneNumber= "+7 (900) 100-00-01",
-                UserStatus= UserStatus.Manager,Email="firstmanager@gmail.com", BirthDate= new DateTime(1990,8,1),Deleted =false,
+                UserStatus= UserStatus.Manager,Email="firstmanager@gmail.com", BirthDate= new DateTime(1990,8,1),
                     Created = DateTime.Now, Updated = DateTime.Now},
                 new {Id = 2, Name = "Maxim",Surname = "Maximov", PhoneNumber = "+7 (900) 100-00-02",UserStatus = UserStatus.Manager,
-                 Email = "secondmanager@gmail.com",BirthDate = new DateTime(1990, 8, 2), Deleted = false,
+                 Email = "secondmanager@gmail.com",BirthDate = new DateTime(1990, 8, 2), 
                     Created = DateTime.Now,  Updated = DateTime.Now},
                 new { Id = 3, Name = "Gleb", Surname = "Glebov", PhoneNumber = "+7 (900) 100-00-03", UserStatus = UserStatus.Manager,
-                 Email = "thirdmanager@gmail.com",BirthDate = new DateTime(1990, 8, 3),  Deleted = false,
+                 Email = "thirdmanager@gmail.com",BirthDate = new DateTime(1990, 8, 3),     
                      Created = DateTime.Now,Updated = DateTime.Now},
                 new {Id = 4,Name = "Grigoriy",Surname = "Grigorov", PhoneNumber = "+7 (900) 100-00-05",UserStatus = UserStatus.Accountant,
-                  Email = "accountant@gmail.com",BirthDate = new DateTime(1990, 8, 4),Deleted = false,
+                  Email = "accountant@gmail.com",BirthDate = new DateTime(1990, 8, 4),
                      Created = DateTime.Now,Updated = DateTime.Now},
                 new {Id = 5,Name = "Vasiliy",Surname = "Vasiliev",PhoneNumber = "+7 (900) 100-00-06", UserStatus = UserStatus.BackOffice,
-                  Email = "backofficet@gmail.com", BirthDate = new DateTime(1990, 8, 5), Deleted = false,
+                  Email = "backofficet@gmail.com", BirthDate = new DateTime(1990, 8, 5), 
                      Created = DateTime.Now,Updated = DateTime.Now},
                 new {Id = 6,Name = "Mihail",Surname = "Mihailov",PhoneNumber = "+7 (900) 100-00-07",UserStatus = UserStatus.Contractor,
-                 Email = "contractor@gmail.com",BirthDate = new DateTime(1990, 8, 6), Deleted = false,
+                 Email = "contractor@gmail.com",BirthDate = new DateTime(1990, 8, 6),
                      Created = DateTime.Now,Updated = DateTime.Now});
         }
        

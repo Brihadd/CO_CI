@@ -14,32 +14,18 @@ namespace CO_CI.Controllers
         {
             _invoiceService = invoiceService;
         }
-        [HttpGet]
+        [HttpPost]
         [Route("[action]")]
-        public async Task<Invoice[]> GetAllInvoices()
+        public async Task<Invoice[]> GetInvoicesByParameters([FromBody] InvoiceParametr invoiceParametr)
         {
             try
             {
-                return await _invoiceService.GetAllInvoices();
+                return await _invoiceService.GetInvoicesByParameters(invoiceParametr);
             }
             catch (Exception ex)
             {
                 // TODO: Log exception
                 return new Invoice[] { };
-            }
-        }
-        [HttpGet]
-        [Route("[action]")]
-        public async Task<Invoice> GetInvoiceById(int id)
-        {
-            try
-            {
-                return await _invoiceService.GetInvoiceById(id);
-            }
-            catch (Exception ex)
-            {
-                // TODO: Log exception
-                return new Invoice { };
             }
         }
         [HttpPost]

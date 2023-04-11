@@ -15,9 +15,9 @@ namespace CO_CI.Controllers
         {
             _orderService = orderService;
         }
-        [HttpGet]
+        [HttpPost]
         [Route("[action]")]
-        public async Task<Order[]> GetOrdersByParameters(OrderParametr orderParametr)
+        public async Task<Order[]> GetOrdersByParameters([FromBody] OrderParametr orderParametr)
         {
             try
             {

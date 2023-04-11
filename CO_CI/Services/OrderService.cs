@@ -47,10 +47,7 @@ namespace CO_CI.Services
                 sql.Append($" WHERE StartDate > {orderParametr.SearchUpToDate} AND EndDate < {orderParametr.SearchUpToDate}");
             return await _context.Orders.FromSqlRaw(sql.ToString()).ToArrayAsync();
         }
-        public int Id { get; set; }
-        public int DepartmentId { get; set; }
-        public int ContractorId { get; set; }
-        public OrderState OrderState { get; set; }
+        
 
         public DateTime SearchFromDate { get; set; }
 
@@ -67,7 +64,7 @@ namespace CO_CI.Services
                 orderToUpdate.Updated = DateTime.Now;
                 orderToUpdate.OrderCode = order.OrderCode;
                 orderToUpdate.ContractorId= order.ContractorId;
-                orderToUpdate.ContractorName = order.ContractorName;
+                orderToUpdate.ContractorFullName = order.ContractorFullName;
                 orderToUpdate.DepartmentId = order.DepartmentId;
                 orderToUpdate.DepartmentName= order.DepartmentName;
                 orderToUpdate.StartDate = order.StartDate;

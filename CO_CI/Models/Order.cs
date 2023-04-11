@@ -7,7 +7,7 @@ namespace CO_CI.Models
         public int Id { get; set; }
         public string OrderCode { get; set; }
         public int? ContractorId { get; set; }
-        public string ContractorName { get; set; }
+        public string ContractorFullName { get; set; }
         public int? DepartmentId { get; set; }
         public string DepartmentName { get; set;}
         public DateTime StartDate { get; set; }
@@ -19,7 +19,7 @@ namespace CO_CI.Models
     }
     public enum OrderState
     {
-        New,
+        NewOrder,
         Canceled,
         ManagerApproved,
         ContractorApproved,
