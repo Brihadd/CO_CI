@@ -81,15 +81,17 @@ namespace CO_CI.Controllers
             catch (Exception ex)
             {
                 // TODO: Log exception
-                return null;
+                return StatusCode(500);
             }
         }
         [HttpDelete]
         [Route("[action]")]
-        public async Task<IActionResult> DeleteEmployee(int id)
+        public async Task<IActionResult> DeleteEmployee(int id,[FromBody] Employee employee)
         {
             try
             {
+                Employee emp = employee;
+
                 if (await _employeeService.DeleteEmployee(id) == true)
                 {
                     return new OkResult();
@@ -102,7 +104,7 @@ namespace CO_CI.Controllers
             catch (Exception ex)
             {
                 // TODO: Log exception
-                return null;
+                return StatusCode(500);
             }
         }
     }

@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Principal;
 
 namespace CO_CI.Models
 {
     public class Invoice:Base
     {
-        public int InvoiceId { get; set; } 
-        public int ContractorId { get; set; }
-        public string ContractorName { get; set; }
-        public string ContractorEmail { get; set;}
-        public string ContractorPhoneNumber { get; set;}
-        public string ContractorOrder { get; set;}
+        public int InvoiceId { get; set; }
+        public int? EmployeeId { get; set; }
+        public Employee Employee { get; set; }
         public bool VatPayer { get; set;}   
         public int BankAccountNumber { get; set;}
         public string Address { get; set; }

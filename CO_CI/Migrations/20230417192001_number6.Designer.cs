@@ -4,6 +4,7 @@ using CO_CI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CO_CI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230417192001_number6")]
+    partial class number6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,36 +53,36 @@ namespace CO_CI.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(39),
+                            Created = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5450),
                             ManagerId = 1,
                             Name = "FirstDepartment",
-                            Updated = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(50)
+                            Updated = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5461)
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(53),
+                            Created = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5464),
                             ManagerId = 2,
                             Name = "SecondDepartment",
-                            Updated = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(53)
+                            Updated = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5464)
                         },
                         new
                         {
                             Id = 3,
-                            Created = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(55),
+                            Created = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5465),
                             ManagerId = 3,
                             Name = "ThirdDepartment",
-                            Updated = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(55)
+                            Updated = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5466)
                         });
                 });
 
             modelBuilder.Entity("CO_CI.Models.Employee", b =>
                 {
-                    b.Property<int>("EmployeeId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
@@ -110,81 +112,81 @@ namespace CO_CI.Migrations
                     b.Property<int>("UserStatus")
                         .HasColumnType("int");
 
-                    b.HasKey("EmployeeId");
+                    b.HasKey("Id");
 
                     b.ToTable("Employees");
 
                     b.HasData(
                         new
                         {
-                            EmployeeId = 1,
+                            Id = 1,
                             BirthDate = new DateTime(1990, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(104),
+                            Created = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5581),
                             Email = "firstmanager@gmail.com",
                             Name = "Ivan",
                             PhoneNumber = "+7 (900) 100-00-01",
                             Surname = "Ivanov",
-                            Updated = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(105),
+                            Updated = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5582),
                             UserStatus = 3
                         },
                         new
                         {
-                            EmployeeId = 2,
+                            Id = 2,
                             BirthDate = new DateTime(1990, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(108),
+                            Created = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5584),
                             Email = "secondmanager@gmail.com",
                             Name = "Maxim",
                             PhoneNumber = "+7 (900) 100-00-02",
                             Surname = "Maximov",
-                            Updated = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(109),
+                            Updated = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5585),
                             UserStatus = 3
                         },
                         new
                         {
-                            EmployeeId = 3,
+                            Id = 3,
                             BirthDate = new DateTime(1990, 8, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(110),
+                            Created = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5586),
                             Email = "thirdmanager@gmail.com",
                             Name = "Gleb",
                             PhoneNumber = "+7 (900) 100-00-03",
                             Surname = "Glebov",
-                            Updated = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(111),
+                            Updated = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5586),
                             UserStatus = 3
                         },
                         new
                         {
-                            EmployeeId = 4,
+                            Id = 4,
                             BirthDate = new DateTime(1990, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(113),
+                            Created = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5588),
                             Email = "accountant@gmail.com",
                             Name = "Grigoriy",
                             PhoneNumber = "+7 (900) 100-00-05",
                             Surname = "Grigorov",
-                            Updated = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(114),
+                            Updated = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5588),
                             UserStatus = 0
                         },
                         new
                         {
-                            EmployeeId = 5,
+                            Id = 5,
                             BirthDate = new DateTime(1990, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(115),
+                            Created = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5589),
                             Email = "backofficet@gmail.com",
                             Name = "Vasiliy",
                             PhoneNumber = "+7 (900) 100-00-06",
                             Surname = "Vasiliev",
-                            Updated = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(116),
+                            Updated = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5589),
                             UserStatus = 1
                         },
                         new
                         {
-                            EmployeeId = 6,
+                            Id = 6,
                             BirthDate = new DateTime(1990, 8, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(117),
+                            Created = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5591),
                             Email = "contractor@gmail.com",
                             Name = "Mihail",
                             PhoneNumber = "+7 (900) 100-00-07",
                             Surname = "Mihailov",
-                            Updated = new DateTime(2023, 4, 17, 22, 25, 9, 848, DateTimeKind.Local).AddTicks(118),
+                            Updated = new DateTime(2023, 4, 17, 22, 20, 0, 968, DateTimeKind.Local).AddTicks(5591),
                             UserStatus = 2
                         });
                 });

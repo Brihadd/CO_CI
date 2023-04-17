@@ -25,7 +25,7 @@ namespace CO_CI.Services
         public async Task<bool> DeleteEmployee(int employeeId)
         {
            var employeeToDelete = await _context.Employees.
-                Where(x => x.Id == employeeId).FirstOrDefaultAsync();
+                Where(x => x.EmployeeId == employeeId).FirstOrDefaultAsync();
             if (employeeToDelete != null)
             {
                 _context.Employees.Remove(employeeToDelete);
@@ -48,13 +48,13 @@ namespace CO_CI.Services
 
         public async Task<Employee> GetEmployeeById(int employeeId)
         {
-            return await _context.Employees.Where(x => x.Id == employeeId).FirstAsync();
+            return await _context.Employees.Where(x => x.EmployeeId == employeeId).FirstAsync();
         }
 
         public async Task<Employee> UpdateEmployee(Employee employee)
         {
             var employeeToUpdate = await _context.Employees.
-                Where(x => x.Id == employee.Id).FirstOrDefaultAsync();
+                Where(x => x.EmployeeId == employee.EmployeeId).FirstOrDefaultAsync();
 
             if (employeeToUpdate!= null)
             {

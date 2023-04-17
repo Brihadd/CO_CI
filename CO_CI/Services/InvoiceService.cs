@@ -59,10 +59,8 @@ namespace CO_CI.Services
             if (invoiceToUpdate != null)
             {
                 invoiceToUpdate.Updated = DateTime.Now;
-                invoiceToUpdate.ContractorName = invoice.ContractorName;
-                invoiceToUpdate.ContractorEmail = invoice.ContractorEmail;
-                invoiceToUpdate.ContractorPhoneNumber = invoice.ContractorPhoneNumber;
-                invoiceToUpdate.ContractorOrder = invoice.ContractorOrder;
+                invoiceToUpdate.EmployeeId= invoice.EmployeeId;
+                invoiceToUpdate.Employee = invoice.Employee;
                 invoiceToUpdate.VatPayer = invoice.VatPayer;
                 invoiceToUpdate.BankAccountNumber = invoice.BankAccountNumber;
                 invoiceToUpdate.Address = invoice.Address;

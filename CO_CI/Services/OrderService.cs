@@ -63,10 +63,10 @@ namespace CO_CI.Services
             {
                 orderToUpdate.Updated = DateTime.Now;
                 orderToUpdate.OrderCode = order.OrderCode;
-                orderToUpdate.ContractorId= order.ContractorId;
-                orderToUpdate.ContractorFullName = order.ContractorFullName;
+                orderToUpdate.EmployeeId= order.EmployeeId;
+                orderToUpdate.Employee = order.Employee;
                 orderToUpdate.DepartmentId = order.DepartmentId;
-                orderToUpdate.DepartmentName= order.DepartmentName;
+                orderToUpdate.Department= order.Department;
                 orderToUpdate.StartDate = order.StartDate;
                 orderToUpdate.EndDate = order.EndDate;
                 orderToUpdate.HourRate = order.HourRate;

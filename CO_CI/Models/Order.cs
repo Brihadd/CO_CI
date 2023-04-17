@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CO_CI.Models
 {
@@ -6,10 +7,11 @@ namespace CO_CI.Models
     {
         public int Id { get; set; }
         public string OrderCode { get; set; }
-        public int? ContractorId { get; set; }
-        public string ContractorFullName { get; set; }
+        public int? EmployeeId { get; set; }
+      
+        public Employee Employee { get; set; }
         public int? DepartmentId { get; set; }
-        public string DepartmentName { get; set;}
+        public Department Department { get; set;}
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public double HourRate { get; set; }
